@@ -1,22 +1,97 @@
+---
+import { Button } from "@/components/ui/button";
+import { ScrollArea } from "@/components/ui/scroll-area";
+import { cn } from "@/lib/utils";
+import MobileNav from "../components/MobileNav";
+
+interface Props {
+  title: string;
+}
+
+const { title } = Astro.props;
+
+const sidebarNavItems = [
+  {
+    title: "Dashboard",
+    href: "/",
+    icon: "dashboard",
+  },
+  {
+    title: "Products",
+    href: "/products",
+    icon: "product",
+  },
+  {
+    title: "Menus",
+    href: "/menus",
+    icon: "menu",
+  },
+  {
+    title: "Workers",
+    href: "/workers",
+    icon: "worker",
+  },
+];
+---
+
 <!doctype html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro Basics</title>
-	</head>
-	<body>
-		<slot />
-	</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="Astro description" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+  </head>
+  <body>
+    <div class="hidden md:block">
+      <div class="border-r bg-background h-screen w-72 fixed left-0 top-0">
+        <div class="flex flex-col h-full">
+          <div class="flex h-14 items-center px-4 border-b">
+            <a href="/" class="flex items-center space-x-2">
+              <!-- Replace with your icon component or SVG -->
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-6 w-6"><path d="M3 3v18h18"/><path d="M18.7 8l-5.1 5.2-2.8-2.7L7 14.3"/></svg>
+              <span class="font-bold">MenuScan</span>
+            </a>
+          </div>
+          <ScrollArea class="flex-1">
+            <nav class="grid gap-1 px-2 py-4">
+              {
+                sidebarNavItems.map((item) => (
+                  <a
+                    href={item.href}
+                    class={cn(
+                      "flex items-center gap-3 rounded-lg px-3 py-2 text-sm font-medium hover:bg-accent hover:text-accent-foreground",
+                      Astro.url.pathname === item.href
+                        ? "bg-accent"
+                        : "transparent"
+                    )}
+                  >
+                    <span>{item.title}</span>
+                  </a>
+                ))
+              }
+            </nav>
+          </ScrollArea>
+        </div>
+      </div>
+    </div>
+    <div class="md:ml-72 relative flex min-h-screen flex-col">
+      <header class="sticky top-0 z-50 w-full border-b bg-background">
+        <div class="container flex h-14 items-center">
+          <div class="md:hidden">
+            <MobileNav client:load sidebarNavItems={sidebarNavItems} />
+          </div>
+          <div class="flex-1">
+            <!-- Empty navbar -->
+          </div>
+        </div>
+      </header>
+      <main class="flex-1">
+        <slot />
+      </main>
+    </div>
+  </body>
 </html>
 
-<style>
-	html,
-	body {
-		margin: 0;
-		width: 100%;
-		height: 100%;
-	}
-</style>

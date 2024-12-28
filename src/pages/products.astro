@@ -1,0 +1,13 @@
+---
+import Layout from "../layouts/Layout.astro";
+import { ExampleDialog } from "../components/ExampleDialog";
+import "@/styles/globals.css"
+---
+
+<Layout title="Products | MenuScan">
+  <div class="flex-1 space-y-4 p-8 pt-6">
+    <h2 class="text-3xl font-bold tracking-tight">Products</h2>
+    <p>Here you can manage your products.</p>
+    <ExampleDialog client:load />
+  </div>
+</Layout>
