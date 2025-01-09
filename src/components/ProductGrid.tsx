@@ -57,7 +57,7 @@ const ProductGrid: React.FC<ProductGridProps> = ({ products }) => {
                   <span>{product.rating}</span>
                 </div>
               </div>
-              <p className="text-sm text-gray-600 mt-2">
+              <p className="text-sm text-gray-600 mt-2" >
                 {product.description}
               </p>
               <div className="flex flex-wrap gap-2 mt-2">

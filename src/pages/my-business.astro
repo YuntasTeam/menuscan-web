@@ -37,7 +37,7 @@ const mostSoldProduct = {
   description:
     "Our best-selling medium roast with notes of chocolate and caramel",
   price: "$4.99",
-  rating: 3.2,
+  rating: 3.5,
   image:
     "https://majestycoffee.com/cdn/shop/articles/pouring_filter_coffee_in_chemex.jpg?v=1681828003",
 };
@@ -71,30 +71,35 @@ const menus = [
 const products = [
   {
     id: 1,
-    name: "Delicious Pizza",
-    price: "$15.99",
-    image: "https://sumatocoffee.com/cdn/shop/articles/espresso.png?v=1718370919&width=640",
-    description: "A mouth-watering pizza topped with fresh ingredients.",
-    rating: 4.5,
-    tags: ["Vegan", "Spicy", "Cheesy"],
+    name: "Espresso Shot",
+    price: "$3.50",
+    image:
+      "https://sumatocoffee.com/cdn/shop/articles/espresso.png?v=1718370919&width=640",
+    description:
+      "A rich, bold shot of pure espresso, perfect for a quick energy boost.",
+    rating: 4.7,
+    tags: ["Strong", "Classic", "Energy"],
   },
   {
     id: 2,
-    name: "Cheeseburger",
-    price: "$12.99",
-    image: "https://res.cloudinary.com/perkchops/image/upload/v1600281166/product/20208162132/tbvzfxnkfz5goonm6hlp.jpg",
-    description: "Juicy beef patty with melted cheese in a toasted bun.",
-    rating: 4.2,
-    tags: ["Hot", "Savory", "Juicy"],
+    name: "Cappuccino",
+    price: "$4.50",
+    image: "https://images.unsplash.com/photo-1511920170033-f8396924c348",
+    description:
+      "A creamy cappuccino with a perfect balance of espresso, steamed milk, and foam.",
+    rating: 4.9,
+    tags: ["Creamy", "Smooth", "Rich"],
   },
   {
     id: 3,
-    name: "Sushi Platter",
-    price: "$24.99",
-    image: "https://majestycoffee.com/cdn/shop/articles/pouring_filter_coffee_in_chemex.jpg?v=1681828003",
-    description: "A selection of fresh sushi and sashimi.",
-    rating: 4.8,
-    tags: ["Seafood", "Fresh", "Healthy"],
+    name: "Iced Latte",
+    price: "$4.99",
+    image:
+      "https://majestycoffee.com/cdn/shop/articles/pouring_filter_coffee_in_chemex.jpg?v=1681828003",
+    description:
+      "A refreshing iced latte, made with freshly brewed espresso and chilled milk.",
+    rating: 4.6,
+    tags: ["Cold", "Refreshing", "Smooth"],
   },
 ];
 ---
@@ -121,7 +126,7 @@ const products = [
 
     <div class="mt-12">
       <h2 class="text-2xl font-semibold mb-4">Our Products</h2>
-      <ProductGrid products={products} client:load/>
+      <ProductGrid products={products} client:load />
     </div>
   </div>
 </Layout>
