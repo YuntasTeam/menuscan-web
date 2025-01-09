@@ -28,9 +28,9 @@ const MobileNav: React.FC<MobileNavProps> = ({ sidebarNavItems }) => {
             viewBox="0 0 24 24"
             fill="none"
             stroke="currentColor"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
+            strokeWidth="2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
             className="h-5 w-5"
           >
             <path d="M3 3v18h18" />
@@ -48,9 +48,9 @@ const MobileNav: React.FC<MobileNavProps> = ({ sidebarNavItems }) => {
             viewBox="0 0 24 24"
             fill="none"
             stroke="currentColor"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
+            strokeWidth="2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
             className="h-6 w-6"
           >
             <path d="M3 3v18h18" />

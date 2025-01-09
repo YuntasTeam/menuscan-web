@@ -31,6 +31,11 @@ const sidebarNavItems = [
     href: "/workers",
     icon: "worker",
   },
+  {
+    title: "My Business",
+    href: "/my-business",
+    icon: "worker",
+  },
 ];
 ---
 
@@ -51,11 +56,24 @@ const sidebarNavItems = [
           <div class="flex h-14 items-center px-4 border-b">
             <a href="/" class="flex items-center space-x-2">
               <!-- Replace with your icon component or SVG -->
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-6 w-6"><path d="M3 3v18h18"/><path d="M18.7 8l-5.1 5.2-2.8-2.7L7 14.3"/></svg>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="h-6 w-6"
+                ><path d="M3 3v18h18"></path><path
+                  d="M18.7 8l-5.1 5.2-2.8-2.7L7 14.3"></path></svg
+              >
               <span class="font-bold">MenuScan</span>
             </a>
           </div>
-          <ScrollArea class="flex-1">
+          <ScrollArea className="flex-1">
             <nav class="grid gap-1 px-2 py-4">
               {
                 sidebarNavItems.map((item) => (
@@ -88,10 +106,9 @@ const sidebarNavItems = [
           </div>
         </div>
       </header>
-      <main class="flex-1">
+      <main class="flex-1 lg:mx-28">
         <slot />
       </main>
     </div>
   </body>
 </html>
-

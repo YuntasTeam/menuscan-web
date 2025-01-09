@@ -1,4 +1,5 @@
 ---
+import LoginForm from "@/components/login/LoginForm.tsx";
 import Layout from "../layouts/Layout.astro";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -9,7 +10,7 @@ import "@/styles/globals.css";
 <div class="flex h-screen w-screen">
   <div
     class="flex w-2/3 items-center justify-center bg-cover bg-center bg-no-repeat"
-    style="background-image: url('/path/to/your/photo.jpg');"
+    style="background-image: url('https://www.foodandwine.com/thmb/DI29Houjc_ccAtFKly0BbVsusHc=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/crispy-comte-cheesburgers-FT-RECIPE0921-6166c6552b7148e8a8561f7765ddf20b.jpg');"
   >
     <div class="bg-black/30 p-4 rounded text-white text-center">
       <h2 class="text-3xl font-bold">Welcome to MenuScan</h2>
@@ -27,9 +28,9 @@ import "@/styles/globals.css";
         </p>
       </div>
       <div class="grid gap-6">
-        <form method="POST">
+        <form method="POST" action="http://localhost:8000/accounts/login">
           <div class="grid gap-2">
-            <div class="grid gap-1">
+            <!-- <div class="grid gap-1">
               <Label class="sr-only" htmlFor="email">Email</Label>
               <Input
                 id="email"
@@ -55,7 +56,8 @@ import "@/styles/globals.css";
             </div>
             <Button type="submit">Sign In</Button>
           </div>
-        </form>
+        </form> -->
+        <LoginForm client:load />
       </div>
       <p class="mt-6 px-8 text-center text-sm text-muted-foreground">
         By clicking continue, you agree to our{" "}
